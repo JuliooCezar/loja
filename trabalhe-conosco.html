@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trabalhe Conosco - Maria Morena</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilo básico para o chat */
+    .container-chat {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #ffee00;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .chat-box {
+      border: 1px solid #434343;
+      border-radius: 5px;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      background: #ffffff;
+    }
+    .message {
+      margin: 10px 0;
+    }
+    .bot {
+      color: #333;
+    }
+    .user {
+      text-align: right;
+      color: #007bff;
+    }
+    .input-area {
+      margin-top: 15px;
+      display: flex;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+     <h1 style="color: var(--cor-hover);">Maria Morena</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="quem somos.html">Quem Somos</a></li>
+          <li><a href="trabalhe-conosco.html" class="ativo">Trabalhe Conosco</a></li>
+          <li><a href="promocoes.html">Promoções</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container-chat">
+    <h2>Trabalhe Conosco 💼</h2>
+    <p>Mesmo sem vagas abertas, estamos sempre em busca de pessoas incríveis. Fale com nosso assistente:</p>
+
+    <div class="chat-box" id="chat">
+      <div class="message bot">Olá! 😊 No momento não estamos contratando, mas você pode enviar seu currículo para nosso banco de talentos.</div>
+      <div class="message bot">Deseja saber como enviar?</div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Digite sua resposta...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const palavroes = ['palavra1', 'palavra2', 'palavrão', 'put*', 'merd*', 'bost*']; // substitua pelos palavrões que quiser
+
+    function contemPalavraProibida(texto) {
+      const minusculo = texto.toLowerCase();
+      return palavroes.some(palavra => {
+        const regex = new RegExp(palavra.replace('*', '.*'), 'i');
+        return regex.test(minusculo);
+      });
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chat = document.getElementById('chat');
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      // Adiciona mensagem do usuário
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message user';
+      userMsg.textContent = msg;
+      chat.appendChild(userMsg);
+
+      // Respostas automáticas com filtro de palavrões
+      let botReply = '';
+      if (contemPalavraProibida(msg)) {
+        botReply = 'Por favor, evite usar palavrões.';
+      } else if (msg.toLowerCase().includes('sim')) {
+        botReply = 'Você pode enviar seu currículo para o e-mail: mariamorenaconveniencia@gmail.com ou entregar pessoalmente na loja: Rua Tiradentes 140 - Bairro Centro. 😊';
+      } else if (msg.toLowerCase().includes('não')) {
+        botReply = 'Tudo bem! Se mudar de ideia, é só voltar por aqui. 😉';
+      } else {
+        botReply = 'Não posso ajudar com isso.';
+      }
+
+      const botMsg = document.createElement('div');
+      botMsg.className = 'message bot';
+      botMsg.textContent = botReply;
+      chat.appendChild(botMsg);
+
+      chat.scrollTop = chat.scrollHeight;
+      input.value = '';
+
+      // Depois de 1.5 segundos, o bot repete a pergunta inicial
+      setTimeout(() => {
+        const pergunta = document.createElement('div');
+        pergunta.className = 'message bot';
+        pergunta.textContent = 'Olá! 😊 No momento não estamos contratando, mas você pode enviar seu currículo para nosso banco de talentos.';
+        chat.appendChild(pergunta);
+        chat.scrollTop = chat.scrollHeight;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
+

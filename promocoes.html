@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Promoções - Maria Morena</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-size: 32px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.ativo {
+      color: #ffcc00;
+    }
+
+    main.promocoes {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .promocoes h2 {
+      color: #ffcc00;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid-promocoes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .promocao {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .promocao img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .promocao:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px 2px #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 style="color: var(--cor-hover);">Maria Morena</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="quem somos.html">Quem Somos</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li><a href="promocoes.html" class="ativo">Promoções</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="promocoes">
+    <h2>Ofertas em Destaque</h2>
+    <div class="grid-promocoes">
+      <div class="promocao">
+        <img src="promoçao1.png" alt="Promoção 1">
+      </div>
+      <div class="promocao">
+        <img src="promoçao2.png" alt="Promoção 2">
+      </div>
+      <div class="promocao">
+        <img src="promoçao3.png" alt="Promoção 3">
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

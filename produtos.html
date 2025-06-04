@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos - Maria Morena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 style="color: var(--cor-hover);">Maria Morena</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="quem somos.html">Quem Somos</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li><a href="promocoes.html">Promoções</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <style>
+    body {
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: yellow;
+    }
+    .produtos h2 {
+      color: yellow;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .produtos p {
+      color: yellow;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+   .grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* responsivo */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.produto {
+  background-color: #333;
+  color: yellow;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* garante que a imagem preencha sem deformar */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+    .produto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px 2px yellow;
+    }
+  </style>
+</head>
+<body>
+  <main class="produtos">
+  <h2></h2> 
+  <p></p>
+
+  <h2>Confira nossos produtos em destaque:</h2>
+  <div class="grid-produtos">
+    <!-- Primeira fileira -->
+    <div class="produto">
+      <img src="monster.jpeg" width="200" alt="Produto 1" />
+      <p>Monster lata</p>
+      <strong>R$ 12,00</strong>
+    </div>
+    <div class="produto">
+      <img src="lata refrigerante.jpeg" alt="Produto 2" />
+      <p>Refrigerante lata</p>
+      <strong>R$ 5,00</strong>
+    </div>
+    <div class="produto">
+      <img src="bombom.jpeg" width="600" alt="Produto 3" />
+      <p>Bombom</p>
+      <strong>R$ 10,00</strong>
+    </div>
+    <div class="produto">
+      <img src="bolo de bote.jpeg "width="600" alt="Produto 4" />
+      <p>Bolo de pote</p>
+      <strong>R$ 13,00</strong>
+    </div>
+    <div class="produto">
+      <img src="pipoca.jpeg" alt="Produto 5" />
+      <p>Pipoca</p>
+      <strong>R$ 7,70</strong>
+    </div>
+
+    <!-- Segunda fileira -->
+    <div class="produto">
+      <img src="coca.jpeg" alt="Produto 6" />
+      <p>Coca 2L</p>
+      <strong>R$ 13,00</strong>
+    </div>
+    <div class="produto">
+      <img src="conquista.jpeg" alt="Produto 7" />
+      <p>Conquista 2L</p>
+      <strong>R$ 8,00</strong>
+    </div>
+    <div class="produto">
+      <img src="detergente ypê.jpeg" alt="Produto 8" />
+      <p>Detergente ypê </p>
+      <strong>R$ 4,50</strong>
+    </div>
+    <div class="produto">
+      <img src="suco maria.jpeg" alt="Produto 9" />
+      <p>Suco maria 1L </p>
+      <strong>R$ 15,00</strong>
+    </div>
+    <div class="produto">
+      <img src="gatorade.jpeg" alt="Produto 10" />
+      <p>Gatorade</p>
+      <strong>R$ 9,00</strong>
+    </div>
+  </div>
+</main>
+

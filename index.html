@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site da Maria Morena Conveniência - produtos e promoções" />
+  <title>Maria Morena Conveniência</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    /* Arredondar os 4 cantos da imagem e do vídeo */
+    .carrossel-produtos img.slide {
+      border-radius: 12px;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    video {
+      border-radius: 12px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 style="color: var(--cor-hover);">Seja bem-vindo</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="quem somos.html">Quem Somos</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li><a href="promocoes.html">Promoções</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- IMAGEM FIXA APENAS -->
+      <div class="carrossel-produtos" aria-label="Carrossel de produtos">
+        <img src="loja7.png" class="slide" alt="Imagem do produto em destaque" />
+      </div>
+
+      <video src="videoloja.mp4" autoplay muted loop aria-label="Vídeo da loja"></video>
+
+      <div class="hero-conteudo">
+        <!-- Conteúdo do herói, texto ou CTA podem ser inseridos aqui -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Maria Morena Conveniência | Desenvolvido por Julio Cezar</p>
+    </div>
+  </footer>
+</body>
+</html>
