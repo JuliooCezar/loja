@@ -6,9 +6,8 @@
   <title>Trabalhe Conosco - Maria Morena</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Estilo básico para o chat */
     .container-chat {
-      max-width: 500px;
+      max-width: 600px;
       margin: 40px auto;
       background-color: #ffee00;
       border-radius: 8px;
@@ -16,49 +15,22 @@
       padding: 20px;
       font-family: Arial, sans-serif;
     }
-    .chat-box {
-      border: 1px solid #434343;
-      border-radius: 5px;
-      padding: 10px;
-      height: 300px;
-      overflow-y: auto;
-      background: #ffffff;
+
+    .container-chat h2 {
+      margin-bottom: 15px;
     }
-    .message {
-      margin: 10px 0;
-    }
-    .bot {
+
+    .info-trabalho p {
+      margin-bottom: 10px;
       color: #333;
-    }
-    .user {
-      text-align: right;
-      color: #007bff;
-    }
-    .input-area {
-      margin-top: 15px;
-      display: flex;
-    }
-    input[type="text"] {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 15px;
-      margin-left: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-     <h1 style="color: var(--cor-hover);">Maria Morena</h1>
+      <h1 style="color: var(--cor-hover);">Maria Morena</h1>
       <nav>
         <ul>
           <li><a href="index.html">Início</a></li>
@@ -73,72 +45,14 @@
 
   <div class="container-chat">
     <h2>Trabalhe Conosco 💼</h2>
-    <p>Mesmo sem vagas abertas, estamos sempre em busca de pessoas incríveis. Fale com nosso assistente:</p>
-
-    <div class="chat-box" id="chat">
-      <div class="message bot">Olá! 😊 No momento não estamos contratando, mas você pode enviar seu currículo para nosso banco de talentos.</div>
-      <div class="message bot">Deseja saber como enviar?</div>
-    </div>
-
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Digite sua resposta...">
-      <button onclick="sendMessage()">Enviar</button>
+    <div class="info-trabalho">
+      <p>Mesmo sem vagas abertas no momento, estamos sempre em busca de pessoas incríveis para fazer parte da nossa equipe.</p>
+      <p>Você pode enviar seu currículo para o e-mail:</p>
+      <p><strong>📧 mariamorenaconveniencia@gmail.com</strong></p>
+      <p>Ou entregar pessoalmente na loja:</p>
+      <p><strong>🏬 Rua Tiradentes 140 - Bairro Centro</strong></p>
+      <p>Obrigado pelo seu interesse! 💛</p>
     </div>
   </div>
-
-  <script>
-    const palavroes = ['palavra1', 'palavra2', 'palavrão', 'put*', 'merd*', 'bost*']; // substitua pelos palavrões que quiser
-
-    function contemPalavraProibida(texto) {
-      const minusculo = texto.toLowerCase();
-      return palavroes.some(palavra => {
-        const regex = new RegExp(palavra.replace('*', '.*'), 'i');
-        return regex.test(minusculo);
-      });
-    }
-
-    function sendMessage() {
-      const input = document.getElementById('userInput');
-      const chat = document.getElementById('chat');
-      const msg = input.value.trim();
-      if (!msg) return;
-
-      // Adiciona mensagem do usuário
-      const userMsg = document.createElement('div');
-      userMsg.className = 'message user';
-      userMsg.textContent = msg;
-      chat.appendChild(userMsg);
-
-      // Respostas automáticas com filtro de palavrões
-      let botReply = '';
-      if (contemPalavraProibida(msg)) {
-        botReply = 'Por favor, evite usar palavrões.';
-      } else if (msg.toLowerCase().includes('sim')) {
-        botReply = 'Você pode enviar seu currículo para o e-mail: mariamorenaconveniencia@gmail.com ou entregar pessoalmente na loja: Rua Tiradentes 140 - Bairro Centro. 😊';
-      } else if (msg.toLowerCase().includes('não')) {
-        botReply = 'Tudo bem! Se mudar de ideia, é só voltar por aqui. 😉';
-      } else {
-        botReply = 'Não posso ajudar com isso.';
-      }
-
-      const botMsg = document.createElement('div');
-      botMsg.className = 'message bot';
-      botMsg.textContent = botReply;
-      chat.appendChild(botMsg);
-
-      chat.scrollTop = chat.scrollHeight;
-      input.value = '';
-
-      // Depois de 1.5 segundos, o bot repete a pergunta inicial
-      setTimeout(() => {
-        const pergunta = document.createElement('div');
-        pergunta.className = 'message bot';
-        pergunta.textContent = 'Olá! 😊 No momento não estamos contratando, mas você pode enviar seu currículo para nosso banco de talentos.';
-        chat.appendChild(pergunta);
-        chat.scrollTop = chat.scrollHeight;
-      }, 1500);
-    }
-  </script>
 </body>
 </html>
-
